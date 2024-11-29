@@ -8,7 +8,7 @@ class UsuarioModel {
 
     public function registrarUsuario($nombre, $apellido, $clave, $correo, $fecha_registro) {
         $claveHashed = password_hash($clave, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO usuarios (Nombre, apellido, clave, correo, fecha_registro) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO usuarios (Nombre, apellido, clave, correo, fecha_registro, chuchau) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([$nombre, $apellido, $claveHashed, $correo, $fecha_registro]);
     }
